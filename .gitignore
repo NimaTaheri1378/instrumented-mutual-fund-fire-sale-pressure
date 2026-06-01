@@ -27,6 +27,7 @@ logs/
 manifests/
 reports/model_artifacts/
 reports/remote_*/
+reports/visual_checks/
 site/
 *.tgz
 *.parquet
