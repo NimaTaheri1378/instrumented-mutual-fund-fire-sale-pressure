@@ -1,0 +1,33 @@
+walk_forward:
+  development: ["2004-01", "2014-12"]
+  validation: ["2015-01", "2018-12"]
+  locked_test: ["2019-01", "2025-12"]
+  retrain_frequency: annual
+signals:
+  main_pressure_score: score_pressure_reversal
+  realized_placebo: score_realized_reversal
+  stale_placebo: score_stale_reversal_12m
+portfolio:
+  top_bottom_quantile: 0.10
+  neutralization: [sector, beta_36m, log_mktcap]
+  transaction_cost_bps: [10, 25, 50]
+  max_name_weight: 0.05
+  turnover_cap: 1.50
+  max_adv_participation: 0.01
+models:
+  elastic_net:
+    l1_ratio: [0.1, 0.5, 0.9]
+  lightgbm:
+    learning_rate: 0.03
+    num_leaves: 63
+    num_boost_round: 800
+    early_stopping_rounds: 50
+    optuna_trials: 12
+    optuna_max_rows: 250000
+  torch_mlp:
+    epochs_full: 20
+    target_standardization: train_window_only
+  conditional_deep:
+    latent_factors: 4
+    epochs_full: 12
+    expected_factor_premium: train_window_mean

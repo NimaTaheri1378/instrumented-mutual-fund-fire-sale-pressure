@@ -1,0 +1,29 @@
+name: mf-fire-sale
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - pyarrow
+  - pyyaml
+  - scipy
+  - statsmodels
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - plotly
+  - kaleido
+  - joblib
+  - pytest
+  - pip:
+      - wrds
+      - psycopg2-binary
+      - lightgbm
+      - xgboost
+      - optuna
+      - shap
+      - torch
+      - mkdocs
+      - mkdocs-material

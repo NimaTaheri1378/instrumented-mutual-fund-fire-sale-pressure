@@ -1,0 +1,70 @@
+project:
+  name: "instrumented-mutual-fund-fire-sale-pressure"
+  start_month: "2004-01"
+  end_month: "2025-12"
+  holdings_start_year: 2003
+  main_holdings_lag_days: 60
+  robustness_holdings_lag_days: 90
+  smoke_start_month: "2018-01"
+  smoke_end_month: "2018-06"
+  random_seed: 20260601
+
+paths:
+  raw: "data/raw"
+  interim: "data/interim"
+  processed: "data/processed"
+  reports: "reports"
+  figures: "reports/figures"
+  tables: "reports/tables"
+  manifests: "manifests"
+  logs: "logs"
+
+wrds:
+  libraries:
+    mf: "crsp_q_mutualfunds"
+    stock: "crsp_a_stock"
+    ccm: "crsp_a_ccm"
+    comp: "comp_na_daily_all"
+    ff: "ff_all"
+    liquidity: "contrib_liquidity_taq"
+  tables:
+    mf_monthly_tna: "monthly_tna"
+    mf_monthly_returns: "monthly_returns"
+    mf_holdings: "holdings"
+    mf_portno_map: "portnomap"
+    mf_style: "fund_style"
+    mf_header: "fund_hdr"
+    crsp_monthly_stock: "msf"
+    crsp_monthly_names: "msenames"
+    crsp_monthly_delist: "msedelist"
+    ccm_linktable: "ccmxpf_linktable"
+    comp_funda: "funda"
+    ff_fivefactors_monthly: "fivefactors_monthly"
+    ff_factors_monthly: "factors_monthly"
+
+universe:
+  share_codes: [10, 11]
+  exchanges: [1, 2, 3]
+  implementation_price_floor: 5.0
+  implementation_mktcap_floor_musd: 500.0
+  implementation_adv_floor_musd: 5.0
+  max_name_weight: 0.05
+  turnover_cap: 1.50
+  max_adv_participation: 0.01
+
+modeling:
+  development_end: "2014-12"
+  validation_start: "2015-01"
+  validation_end: "2018-12"
+  test_start: "2019-01"
+  retrain_frequency: "annual"
+  top_bottom_quantile: 0.10
+  transaction_cost_bps: [10, 25, 50]
+  newey_west_lags: 6
+  lightgbm_num_boost_round: 800
+  lightgbm_early_stopping_rounds: 50
+  lightgbm_optuna_trials: 12
+  lightgbm_optuna_max_rows: 250000
+  conditional_deep_latent_factors: 4
+  conditional_deep_epochs_full: 12
+  conditional_deep_epochs_smoke: 3

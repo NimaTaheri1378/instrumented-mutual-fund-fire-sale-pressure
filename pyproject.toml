@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "instrumented-mutual-fund-fire-sale-pressure"
+version = "0.1.0"
+description = "Instrumented mutual-fund fire-sale pressure in U.S. equities"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pandas",
+  "pyarrow",
+  "pyyaml",
+  "wrds",
+  "psycopg2-binary",
+  "scipy",
+  "statsmodels",
+  "scikit-learn",
+  "matplotlib",
+  "seaborn",
+  "plotly",
+  "kaleido",
+  "joblib",
+]
+
+[project.optional-dependencies]
+ml = ["lightgbm", "xgboost", "optuna", "shap", "torch"]
+dev = ["pytest", "ruff"]
+docs = ["mkdocs", "mkdocs-material"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"

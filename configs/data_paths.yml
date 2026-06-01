@@ -1,0 +1,19 @@
+raw:
+  mutual_funds: data/raw/mutual_funds
+  crsp_monthly: data/raw/crsp/monthly
+  compustat: data/raw/compustat
+  factors: data/raw/factors
+interim:
+  mutual_funds: data/interim/mutual_funds
+  pressure: data/interim/pressure
+  stocks: data/interim/stocks
+  compustat: data/interim/compustat
+processed:
+  model_panel: data/processed/model_panel_{sample}.parquet
+  portfolio_returns: data/processed/portfolio_returns_{sample}.parquet
+reports:
+  figures: reports/figures
+  tables: reports/tables
+  html: reports/html
+manifests: manifests
+logs: logs

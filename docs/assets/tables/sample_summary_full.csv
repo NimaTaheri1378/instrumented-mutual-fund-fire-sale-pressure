@@ -1,0 +1,2 @@
+sample,start,end,stock_months,unique_stocks,pressure_coverage,implementation_share,nonmissing_next_return,nonmissing_compustat_controls
+full,2004-01-31,2024-12-31,1020111,10066,0.954263800704041,0.22905840638910863,1009796,932353

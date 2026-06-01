@@ -1,0 +1,12 @@
+site_name: instrumented-mutual-fund-fire-sale-pressure
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Methodology: methodology.md
+  - Results: results.md
+  - Runbook: runbook.md
+  - Release: release_checklist.md
+  - Claim Ledger: claim_ledger.md
+  - Completion Audit: proposal_completion_audit.md
+  - API: api.md

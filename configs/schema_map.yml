@@ -1,0 +1,58 @@
+created_from: "reports/remote_full_refreshed/manifests/schema_audit.json"
+wrds_library_count: 309
+aliases:
+  mutual_fund_monthly_tna:
+    library: crsp_q_mutualfunds
+    table: monthly_tna
+    keys: [crsp_fundno, caldt]
+    required_columns: [crsp_fundno, caldt, mtna]
+  mutual_fund_monthly_returns:
+    library: crsp_q_mutualfunds
+    table: monthly_returns
+    keys: [crsp_fundno, caldt]
+    required_columns: [crsp_fundno, caldt, mret]
+  mutual_fund_holdings:
+    library: crsp_q_mutualfunds
+    table: holdings
+    keys: [crsp_portno, report_dt, permno]
+    required_columns: [crsp_portno, report_dt, eff_dt, percent_tna, nbr_shares, market_val, permno, permco]
+  mutual_fund_portfolio_map:
+    library: crsp_q_mutualfunds
+    table: portnomap
+    keys: [crsp_fundno, begdt, enddt]
+    required_columns: [crsp_fundno, crsp_portno, begdt, enddt, mgmt_cd, index_fund_flag, et_flag]
+  mutual_fund_style:
+    library: crsp_q_mutualfunds
+    table: fund_style
+    keys: [crsp_fundno, begdt, enddt]
+    required_columns: [crsp_fundno, begdt, enddt, crsp_obj_cd, lipper_class, policy]
+  crsp_monthly_stock:
+    library: crsp_a_stock
+    table: msf
+    keys: [permno, date]
+    required_columns: [permno, permco, date, prc, ret, retx, vol, shrout, bid, ask, spread]
+  crsp_monthly_names:
+    library: crsp_a_stock
+    table: msenames
+    keys: [permno, namedt, nameendt]
+    required_columns: [permno, namedt, nameendt, shrcd, exchcd, siccd, ticker, comnam, naics]
+  crsp_monthly_delist:
+    library: crsp_a_stock
+    table: msedelist
+    keys: [permno, dlstdt]
+    required_columns: [permno, dlstdt, dlstcd, dlret]
+  ccm_linktable:
+    library: crsp_a_ccm
+    table: ccmxpf_linktable
+    keys: [gvkey, lpermno, linkdt, linkenddt]
+    required_columns: [gvkey, lpermno, lpermco, linktype, linkprim, linkdt, linkenddt]
+  compustat_funda:
+    library: comp_na_daily_all
+    table: funda
+    keys: [gvkey, datadate]
+    required_columns: [gvkey, datadate, fyear, at, sale, ceq, seq, txditc, pstk, pstkrv, pstkl, lt, che, ib, capx, csho, prcc_f]
+  fama_french_five_factors:
+    library: ff_all
+    table: fivefactors_monthly
+    keys: [date]
+    required_columns: [date, mktrf, smb, hml, rmw, cma, rf, umd]

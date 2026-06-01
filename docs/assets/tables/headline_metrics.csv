@@ -1,0 +1,8 @@
+block,metric,value
+Panel,Stock-months,"1,020,111"
+Panel,Stocks,"10,066"
+Panel,Pressure coverage,95.4%
+Implementation,Best FF5+UMD alpha t,4.78
+Implementation,Best annualized mean,13.1%
+Prediction,Best locked-test rank IC,5.82%
+Strategy audit,Validation-selected test net 25 bps,0.9%

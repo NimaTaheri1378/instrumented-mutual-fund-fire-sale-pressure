@@ -1,0 +1,50 @@
+# Secrets and credentials
+.env
+.env.*
+*.key
+*.pem
+*.pgpass
+pgpass*
+credentials*
+secrets*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Project data and heavy outputs
+data/raw/
+data/interim/
+data/processed/
+data/samples/
+logs/
+manifests/
+reports/model_artifacts/
+reports/remote_*/
+site/
+*.tgz
+*.parquet
+*.feather
+*.pkl
+*.joblib
+docs/figures/*.svg
+
+# Keep folder skeletons
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!data/samples/.gitkeep
+!logs/.gitkeep
+!manifests/.gitkeep
+
+# Local/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
